@@ -1,13 +1,18 @@
 function updateProduct(isIncresing) {
   const caseInput = document.getElementById("case-number");
-  const caseNumber = caseInput.value;
+  let caseNumber = caseInput.value;
   if (isIncresing == true) {
-    caseInput.value = parseInt(caseNumber) + 1;
+    caseNumber = parseInt(caseNumber) + 1;
   } else if (caseNumber > 0) {
-    caseInput.value = parseInt(caseNumber) - 1;
+    caseNumber = parseInt(caseNumber) - 1;
   }
+  caseInput.value = caseNumber;
+  const inputTotal = document.getElementById("case-total");
+  inputTotal.innerText = caseNumber * 59;
 }
+//phone
 
+//case
 document.getElementById("case-plus").addEventListener("click", function () {
   updateProduct(true);
 });
